@@ -8,7 +8,7 @@ $('#getWeatherBtn').click(() => {
   const cityName = $('#cityInput').val();
   $.ajax({
       type: 'GET',
-      url: `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=27d43832d2a4adcb97fcbfa23db130aa`,
+      url: 'http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=27d43832d2a4adcb97fcbfa23db130aa',
       success: (data) => {
           console.log('In success callback');
           console.log(data);
@@ -30,9 +30,6 @@ $('#getWeatherBtn').click(() => {
 $('#getForecastBtn').click(() => {
   $('table').hide();
   const cityName = $('#cityInput').val();
-  // Hit the API
-  // On Success, parse the forecast information from the response
-  // and update the options in the chart
   $.ajax({
       type: 'GET',
       url: `http://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=27d43832d2a4adcb97fcbfa23db130aa`,
